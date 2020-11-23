@@ -21,6 +21,7 @@ const setValidNumber = (currentTable, x, y) => {
             if (currentTable.isNotIllegal()) return currentTable;
         }
     }
+    console.log(idToPoint(lastId));
     console.log(currentTable.getValidNumbers(...idToPoint(lastId)));
 
     for (const number of currentTable.getValidNumbers(...idToPoint(lastId))) {

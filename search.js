@@ -1,5 +1,12 @@
 import Table from './table.js';
 
+const idToPoint = id => {
+    const parsed = parseInt(id);
+    const x = Math.floor(parsed / 10);
+    const y = parsed % 10;
+    return [x, y];
+}
+
 const setValidNumber = (currentTable, x, y) => {
     const entries = currentTable.entries();
     let lastId = 11;

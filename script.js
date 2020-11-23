@@ -63,4 +63,5 @@ startButton.addEventListener("click", () => {
         }
     });
     worker.postMessage([new Table(table), 1, 1]);
+    console.log(new Table(table));
 });

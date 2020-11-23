@@ -49,7 +49,7 @@ startButton.addEventListener("click", () => {
         table.set(x * 10 + y, node.innerHTML !== "" ? parseInt(node.innerHTML) : -1); /* (i,j) から (x, y)に変更 */
     }
 
-    const worker = new Worker("./search.js");
+    const worker = new Worker("./search.js", {type:"module"});
     worker.addEventListener("message", e => {
         const resolve = e.data;
         if (resolve) {

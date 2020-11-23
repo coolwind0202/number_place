@@ -21,9 +21,6 @@ const setValidNumber = (currentTable, x, y) => {
             if (currentTable.isNotIllegal()) return currentTable;
         }
     }
-    console.log(currentTable);
-    console.log(currentTable.getValidNumbers(...idToPoint(lastId)));
-
     for (const number of currentTable.getValidNumbers(...idToPoint(lastId))) {
         const clone = new Table(currentTable);
         clone.set(lastId, number); /* 試しに何か数字を入れる */
@@ -33,6 +30,6 @@ const setValidNumber = (currentTable, x, y) => {
 }
 
 self.addEventListener("message", e => {
-    console.log(...e.data);
-    self.postMessage(setValidNumber(...e.data));
+    const [currentMap, x, y] = e.data;
+    self.postMessage(setValidNumber(new Table(currentMap), x, y));
 });

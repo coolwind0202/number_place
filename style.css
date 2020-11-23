@@ -1,0 +1,13 @@
+.root {
+    display: grid;
+    grid-template-columns: repeat(9, 4em);
+}
+
+.inputWrapper {
+    height: 4em;
+    width: 4em;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

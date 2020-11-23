@@ -33,5 +33,6 @@ const setValidNumber = (currentTable, x, y) => {
 }
 
 self.addEventListener("message", e => {
+    console.log(...e.data);
     self.postMessage(setValidNumber(...e.data));
 });
